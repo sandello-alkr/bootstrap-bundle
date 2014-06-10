@@ -78,11 +78,11 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue(self::DEFAULT_FONTS_DIR)
                 ->end()
                 // TODO for v3.0: Rename to css_preprocessor
-                ->scalarNode('less_filter')
+                ->scalarNode('filter')
                     ->defaultValue('less')
                     ->validate()
                         ->ifNotInArray(array('less', 'lessphp', 'sass', 'none'))
-                        ->thenInvalid('Invalid less filter "%s"')
+                        ->thenInvalid('Invalid filter "%s", pick one of "less", "lessphp", "sass" or "none"')
                     ->end()
                 ->end()
                 ->scalarNode('icon_prefix')
